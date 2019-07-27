@@ -8,7 +8,6 @@ class Bomb extends React.Component {
       count: 0,
       bombState: 'tick'
     }
-    console.log('constructor')
   }
 
   componentDidMount(){
@@ -21,27 +20,6 @@ class Bomb extends React.Component {
 
   componentWillUnmount(){
     clearInterval(this.interval)
-  }
-
-  renderElement(){
-    if (this.state.count % 2 === 0){
-      this.setState({
-        bombState: 'tick'
-      })
-      return <p>{this.state.bombState}</p>
-    }
-    else if (this.state.count % 2 === 1){
-      this.setState({
-        bombState: 'tock'
-      })
-      return <p>{this.state.bombState}</p>
-    }
-    else if (this.state.count >= 8){
-      this.setState({
-        bombState: 'BOOM!!!!'
-      })
-      return <p>{this.state.bombState}</p>
-    }
   }
 
   render() {
